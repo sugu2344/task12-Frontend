@@ -23,7 +23,7 @@ function SignUp() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:4444/auth/register",
+        "https://task12-kwe3.onrender.com/auth/register",
         formData
       );
       setMessage(response.data.message);
