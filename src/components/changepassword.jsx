@@ -12,13 +12,16 @@ const ChangePassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://127.0.0.1:4444/auth/change`, {
-        code,
-        password,
-      });
+      const response = await axios.put(
+        `https://task12-kwe3.onrender.com/auth/change`,
+        {
+          code,
+          password,
+        }
+      );
       setMessage(response.data.message);
       setError("");
-      setTimeout(() => navigate("/"), 2000); 
+      setTimeout(() => navigate("/"), 2000);
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong");
       setMessage("");
